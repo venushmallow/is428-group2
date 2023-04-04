@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dengue Outbreak Analysis Using Data Visualization (Global and Local)</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/png" href="assets/net.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#page-top">Dengue Outbreak Analysis</a></li>
+                <li class="sidebar-nav-item"><a href="index.html">Homepage</a></li>
+                <li class="sidebar-nav-item"><a href="globaldata.html">Global Data</a></li>
+                <li class="sidebar-nav-item"><a href="globalanalysis.html">Global Analysis</a></li>
+                <li class="sidebar-nav-item"><a href="localdata.html">Local Data</a></li>
+                <li class="sidebar-nav-item"><a href="localanalysis.html">Local Analysis</a></li>
+            </ul>
+        </nav>
+        <!-- Header-->
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-5" style="color: whitesmoke;">Global Dengue Outbreak Analysis</h1>
+                <h3 class="mb-3" style="color: honeydew;">Global Dengue outbreak analysis based on GDP, Climate, and Precipitation rate towards Incidence.</h3>
+                <p class="mb-2" style="color: white; font-size: large;">The global analysis is focused on data from 2000 - 2019, which is similar to the present-day context and would ensure that the insights generated remain relevant. However, do note that temperature data is only available till 2013.
+                </p>
+                <br>
+                <a class="btn btn-primary btn-xl" href="#about">Start</a>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Stacked area chart on the average incidence of dengue across the years 2000 - 2019 for each continent</h2>
+                        <p class="lead mb-5">
+                            The stacked area chart below provides an overview of the severity of dengue outbreak (through the average incidence values) globally and in different continents. The colour highlights the continent and the area provides an indication of the severity of the dengue outbreak in the respective continents along with the extent to which it is contributing to the global dengue outbreak. The number in the area is the average incidence of dengue for the respective continent across the years.
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680584741858' style='position: relative'><noscript><a href='#'><img alt='Global Trends in the Average Incidence of Dengue across the years 2000 - 2019 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalCasesIncidence&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;GlobalCasesIncidence' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalCasesIncidence&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680584741858');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <p class="lead mb-5">
+                            We can see that the global average incidence of dengue has generally been increasing across the years, especially in recent years. This global pattern is consistent with the pattern shown in each of the continents as well, given the almost parallel trend lines for each continent. This highlights the rapidly worsening dengue outbreak across the world. There also appears to be a drop in the average incidence of dengue in all continents (and hence globally) between 2006 to 2010 (more significantly between 2008 - 2010), which partly coincides with the Global Financial Crisis. However, there is no empirical evidence published to provide an explanation for this pattern.
+                        </p>
+                        <a class="btn btn-dark btn-xl" href="#barrankchart">Bar Rank Chart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="content-section bg-dark" id="barrankchart">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Global Rank Chart 1990 - 2019</h2>
+                        <br>
+                        <p class="lead mb-5">
+                            A bar chart race, which is a ranked bar chart (in descending order) of the countries in the dataset based on their average incidence of dengue in the respective years. The higher the average incidence of dengue in the country in the specified year, the higher its rank. The 10 countries with the highest average incidence of dengue (i.e., most severe dengue outbreak) in each year are displayed each time. 
+                        </p>
+                        <p class="lead mb-5">
+                            An animated map, which is a world map with points representing the average incidence of dengue in the country during the specified year. The points are positioned based on the average latitude and longitude of the country. The larger the point and the closer the hue of the point is to dark red, the higher the average incidence of dengue in the country during that year. 
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680585019011' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428_Group2_Global_Rank_Chart&#47;AnimationGlobal&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428_Group2_Global_Rank_Chart&#47;AnimationGlobal' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428_Group2_Global_Rank_Chart&#47;AnimationGlobal&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680585019011');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <a class="btn btn-light btn-xl text-dark" href="#GDP">GDP Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="content-section bg-light" id="GDP">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Scatterplot matrix on the correlation between average GDP per capita (current US$) and the average incidence of dengue in each continent over the years 2000 - 2019.</h2>
+                        <br>
+                        <p class="lead mb-5">
+                            The visualisation shown plots the average GDP per capita (in current US$) and the average incidence of dengue across the years for each continent. From this visualisation, we can determine the correlation between average GDP per capita and the average incidence of dengue for each continent based on the similarity of the trend lines for average GDP per capita and average incidence of dengue. We find that average GDP per capita and average incidence of dengue are positively correlated in Africa, Asia and Oceania, where both trend lines are positively sloped; and  completely uncorrelated in Americas and Europe, where the trend line for average GDP per capita is positively sloped but the slope of the trend line for average incidence of dengue is approximately zero. In essence, there seems to be a positive but weak correlation between the average GDP per capita and the average incidence of dengue. This could be counterintuitive as one might expect developed countries to have less severe outbreaks instead due to the greater ability to implement appropriate measures to mitigate the problem. However, the positive correlation could possibly be attributed to climate change, increased population density and urbanisation. 
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680585723164' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GDP&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;GDP' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GDP&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680585723164');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <a class="btn btn-dark btn-xl" href="#chloropleth-temp">Temperature Analysis (1)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="content-section bg-dark" id="chloropleth-temp">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Animation of choropleth map on average temperature in each country across the years 2000 - 2019. The metric used is degrees Celsius.</h2>
+                        <br>
+                        <p class="lead mb-5">
+                            The animation could be seen below, where it shows the difference in average temperature in each country throughout the years. The closer the hue is to red, the higher the country’s average temperature is while the closer the hue is to blue, the lower the country’s average temperature is. As the difference in average temperature is not too distinct throughout the years, the number of the average temperature is included inside the map so viewers can directly see the changes in average temperature through the value.
+                        </p>
+                        <p class="lead mb-5">
+                            According to the Figure, countries in Africa, South America, Asia, and Oceania continents have higher average temperatures compared to other regions. The difference in temperature for each country across the years however, does not change drastically. To view the correlation between average temperature and average incidence of dengue in each continent, a scatterplot matrix shown in  was used. The scatterplot matrix shows the trend of each continent’s average temperature, and average incidence of dengue.
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680586059877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalTempAnimation&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;GlobalTempAnimation' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalTempAnimation&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680586059877');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <a class="btn btn-light btn-xl text-dark" href="#temp-analysis2">Temperature Analysis (2)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="content-section bg-light" id="temp-analysis2">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Scatterplot matrix of average temperature and average incidence of dengue in each continent across the years 2000 - 2019.</h2>
+                        <br>
+                        <p class="lead mb-5">
+                            Note that the data for average temperature stops at 2013, while the data for incidence is recorded until 2019. Overall, there seems to be a positive correlation between average temperature and average incidence of dengue in all continents, given that trend lines for average incidence of dengue and average temperature for all continents are upward-sloping. However, as the average temperature in each country does not have drastic changes throughout the years, it is difficult to make an accurate conclusion on how the average temperature trend changes along with the trend of average dengue incidence.
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680586152824' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalComparisonofCasesvsTemp&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;GlobalComparisonofCasesvsTemp' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalComparisonofCasesvsTemp&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680586152824');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <p class="lead mb-5">
+                            However, we observed that continents with higher average temperatures have higher average incidence of dengue. This pattern is observed for all continents except the Americas. It may appear unclear why the Americas have higher incidence of dengue than Africa, considering its lower average temperature. However, upon further analysis on the anomaly, we found that the countries that contribute to America's high incidence of dengue are Latin American countries.
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680586222523' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;BubbleGraph&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;BubbleGraph' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;BubbleGraph&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680586222523');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <a class="btn btn-dark btn-xl" href="#chloropleth-precip">Precipitation Analysis (1)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="content-section bg-dark" id="chloropleth-precip">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Animation of choropleth map on average precipitation in each country across the years 2000 - 2019.</h2>
+                        <br>
+                        <p class="lead mb-5">
+                            The animation could be seen below, where it shows the difference in average precipitation in each country throughout the years. The darker the hue of blue the higher average precipitation the country has, and vice versa. As the difference in average precipitation is not too distinct throughout the years, the number of the average precipitation is included inside the map so viewers can directly see the changes in average precipitation through the value.
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680586392455' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalPrecipitationAnimation&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;GlobalPrecipitationAnimation' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalPrecipitationAnimation&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680586392455');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        <br>
+                        <p class="lead mb-5">
+                            Similar to average temperature, there is no drastic change in precipitation throughout the years for all countries. Continents that have high temperatures seem to also have high precipitation, and can be seen in the Americas, Asia, and Oceania having darker hues of blue. This is expected, as higher temperature causes higher volume of evaporation hence causing higher precipitation according to a report by EPA (United States Environmental Protection Agency) []. To view the direct correlation of average precipitation with average incidence of dengue, a scatterplot matrix was used as shown in Figure <> below.
+                        </p>
+                        <a class="btn btn-light btn-xl text-dark" href="#precip-analysis2">Precipitation Analysis (2)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="content-section bg-light" id="precip-analysis2">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Scatterplot matrix of average precipitation and average incidence of dengue in each continent across the years 2000 - 2019.</h2>
+                        <br>
+                        <p class="lead mb-5">
+                            Interestingly, the trend of average precipitation across the years does not change much, not as much as the trend in average temperature shown in Figure <>. However, looking at the scatterplot matrix, continents that have higher average precipitation have a higher average of incidence of dengue in general. The anomaly found in the previous Figure <> could be addressed, the reason why the Americas has a higher average incidence of dengue despite having a lower average temperature compared to Africa and Asia could be due to its higher average precipitation as shown in Figure <>. Oceania has a consistently high average precipitation and temperature compared to the other continents, which correlates to its higher average incidence of dengue.
+                        </p>
+                        <div class='tableauPlaceholder' id='viz1680586513122' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalComparisonofCasesvsTemp2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IS428-Group2-Global-Analysis&#47;GlobalComparisonofCasesvsTemp2' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IS&#47;IS428-Group2-Global-Analysis&#47;GlobalComparisonofCasesvsTemp2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680586513122');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio-->
+        <section class="content-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Our Solution</h3>
+                    <h2 class="mb-5">Data Preprocessing and Data Visualizations</h2>
+                </div>
+                <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Global Data</div>
+                                    <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Global Analysis</div>
+                                    <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-2.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Local Data</div>
+                                    <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-3.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Local Analysis</div>
+                                    <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-4.jpg" alt="..." />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <!-- <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                    </li>
+                </ul> -->
+                <p class="text-muted small mb-0">Copyright &copy; IS428 G1 - Group 2 Website 2023</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
