@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dengue Outbreak Analysis Using Data Visualization (Global and Local)</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/png" href="assets/net.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#page-top">Dengue Outbreak Analysis</a></li>
+                <li class="sidebar-nav-item"><a href="index.html">Homepage</a></li>
+                <li class="sidebar-nav-item"><a href="globaldata.html">Global Data</a></li>
+                <li class="sidebar-nav-item"><a href="globalanalysis.html">Global Analysis</a></li>
+                <li class="sidebar-nav-item"><a href="localdata.html">Local Data</a></li>
+                <li class="sidebar-nav-item"><a href="localanalysis.html">Local Analysis</a></li>
+            </ul>
+        </nav>
+        <!-- Header-->
+        <header class="masthead-local-data d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1" style="color: whitesmoke;">Local Data and Preprocessing</h1>
+                <h3 class="mb-3" style="color: honeydew;">List of datasets used in local dengue case analysis and preprocessing done towards it for visualization.</h3>
+                <p class="mb-2" style="color: white; font-size: large;">The local analysis is focused on analysing dengue outbreak in Singapore from (year to year) and to compare various factors such as population size of different subzones and planning areas, climate, number and types of dwelling units and water bodies in Singapore. From this analysis, we are able to determine any relationship between the different factors and number of dengue cases in different areas. More attention and specific recommendations can be designed and given for those areas.
+                </p>
+                <br>
+                <a class="btn btn-primary btn-xl" href="#cases" style="margin-right: 10px;">Local Dengue Cases</a>
+                <a class="btn btn-primary btn-xl" href="#population" style="margin-right: 10px;">Singapore Population</a>
+                <a class="btn btn-primary btn-xl" href="#dwellings" style="margin-right: 10px;">Singapore Dwellings Information</a>
+                <a class="btn btn-primary btn-xl" href="#incidence" style="margin-right: 10px;">Singapore Dengue Incidence Rate</a>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-light" id="cases">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Singapore Dengue Cases</h2>
+                        <p class="lead mb-3">This dataset provides the number of dengue cases at various street addresses in Singapore from May 2013 to November 2020. It is obtained from <a href="https://outbreak.sgcharts.com/data">link</a> and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th.light {
+                                    border: solid 2px lightgrey;
+                                    background-color:azure;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th class="light">Fields</th>
+                                    <th class="light">Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Number of cases</td>
+                                    <td>Number of reported dengue cases at the location.</td>
+                                </tr>
+                                <tr>
+                                    <td>Street Address</td>
+                                    <td>Street address where dengue cases are reported (down to the apartment block level).</td>
+                                </tr>
+                                <tr>
+                                    <td>Latitude</td>
+                                    <td>Latitude of the street address.</td>
+                                </tr>
+                                <tr>
+                                    <td>Longitude</td>
+                                    <td>Longitude of the street address</td>
+                                </tr>
+                                <tr>
+                                    <td>Cluster Number</td>
+                                    <td>To represent the dengue cluster number</td>
+                                </tr>
+                                <tr>
+                                    <td>Recent Cases in Cluster</td>
+                                    <td>Number of dengue cases with onset in last 2 weeks</td>
+                                </tr>
+                                <tr>
+                                    <td>Total cases in cluster</td>
+                                    <td>Total number of dengue cases reported in this cluster</td>
+                                </tr>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Date string in YYMMDD format</td>
+                                </tr>
+                                <tr>
+                                    <td>Month Number</td>
+                                    <td>Index number of the month, where 1=January and 12=December</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-dark" id="population">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Singapore Residents by Subzone and Type of Dwelling, June 2016.shp</h2>
+                        <p class="lead mb-3">This dataset provides the resident population by planning area and subzones based on URA MP14 and type of dwelling in 2016. The shapefile is used to obtain the geometry for the different subzones in Singapore. The shapefile can be obtained from <a href="https://data.gov.sg/dataset/singapore-residents-by-subzone-and-type-of-dwelling-june-2016">link</a>.</p>
+                        <img src="assets/img/dataset-local-2.png" height="300px" width="500px"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-light" id="dwellings">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Resident Dwellings by Planning Area of Residence and Subzones 2000 to 2020</h2>
+                        <p class="lead mb-3">This dataset provides the number of HDB dwellings, condominiums, other apartments, landed properties and other types of properties based on planning area of residence and subzones from 2000 to 2020. It is obtained from <a href="https://www.singstat.gov.sg/find-data/search-by-theme/population/geographic-distribution/latest-data">link</a> and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th.light {
+                                    border: solid 2px lightgrey;
+                                    background-color:azure;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th class="light">Fields</th>
+                                    <th class="light">Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Planning Area of Residence</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Subzone</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>HDB Dwellings Total, 1-and 2-Room Flats, 3-Room Flats, 4-Room Flats, 5-Room and Executive Flats</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Condominiums and Other Apartments</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Landed Properties</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Others</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-dark" id="incidence">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Dengue incidence rate 2012 - 2021 excel file</h2>
+                        <p class="lead mb-3">This dataset contains the dengue incidence rate in Singapore from the years 2012 to 2021. The resident populations per year is taken from  Residents by Age Group and Type of Dwelling, Annual dataset from <a href="https://www.singstat.gov.sg/find-data/search-by-theme/population/population-and-population-structure/latest-data">link</a> and the yearly number of dengue cases is taken from <a href="https://www.statista.com/statistics/963019/number-of-dengue-fever-cases-singapore/#:~:text=In%202021%2C%20there%20were%205%2C261,in%202020%2C%20which%20was%2035%2C266">link</a>. It contains the following variables: </p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th {
+                                    border: solid 2px lightgrey;
+                                    background-color:darkslategray;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th>Fields</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Year</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Number of dengue cases</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Residents Population</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Dengue incidence rate per 100,000 population</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio-->
+        <section class="content-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Our Solution</h3>
+                    <h2 class="mb-5">Data Preprocessing and Data Visualizations</h2>
+                </div>
+                <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="globaldata.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Global Data</div>
+                                    <p class="mb-0">Data used for global dengue cases analysis.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/global-data.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="globalanalysis.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Global Analysis</div>
+                                    <p class="mb-0">Analysis along with data visualizations for global dengue cases.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/undarken-globe-bg.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="localdata.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Local Data</div>
+                                    <p class="mb-0">Data used for global dengue cases analysis.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/local-data-bg.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="localanalysis.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Local Analysis</div>
+                                    <p class="mb-0">Analysis along with data visualizations for local dengue cases.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/local-analysis-bg.png" alt="..." />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <p class="text-muted small mb-0">Copyright &copy; IS428 G1 - Group 2 Website 2023</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
