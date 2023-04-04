@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dengue Outbreak Analysis Using Data Visualization (Global and Local)</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/png" href="assets/net.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#page-top">Dengue Outbreak Analysis</a></li>
+                <li class="sidebar-nav-item"><a href="index.html">Homepage</a></li>
+                <li class="sidebar-nav-item"><a href="globaldata.html">Global Data</a></li>
+                <li class="sidebar-nav-item"><a href="globalanalysis.html">Global Analysis</a></li>
+                <li class="sidebar-nav-item"><a href="localdata.html">Local Data</a></li>
+                <li class="sidebar-nav-item"><a href="localanalysis.html">Local Analysis</a></li>
+            </ul>
+        </nav>
+        <!-- Header-->
+        <header class="masthead-global-data d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1" style="color: whitesmoke;">Global Data and Preprocessing</h1>
+                <h3 class="mb-3" style="color: honeydew;">List of datasets used in global dengue case analysis and preprocessing done towards it for visualization.</h3>
+                <p class="mb-2" style="color: white; font-size: large;">The global analysis is focused on comparing the severity of the dengue outbreak in different countries and continents based on the average incidence of dengue, and aims to determine the factors that potentially result in the differing levels of severity between the various countries or continents.
+                </p>
+                <br>
+                <a class="btn btn-primary btn-xl" href="#cases" style="margin-right: 10px;">Global Dengue Cases</a>
+                <a class="btn btn-primary btn-xl" href="#population" style="margin-right: 10px;">Global Population</a>
+                <a class="btn btn-primary btn-xl" href="#gdp" style="margin-right: 10px;">Gross Dometic Product per capita</a>
+                <a class="btn btn-primary btn-xl" href="#loc" style="margin-right: 10px;">Countries</a>
+                <a class="btn btn-primary btn-xl" href="#precip" style="margin-right: 10px;">Global Average Precipitation</a>
+                <a class="btn btn-primary btn-xl" href="#temp" style="margin-right: 10px; margin-top: 10px;">Global Average Temperature</a>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-light" id="cases">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Global dengue cases across the years (Our World in Data).csv</h2>
+                        <p class="lead mb-3">Provides the total number of dengue cases in each country for each year between 1990 to 2019. The dataset was obtained from <a href="https://ourworldindata.org/grapher/dengue-incidence">link</a> and contains following variables: </p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th.light {
+                                    border: solid 2px lightgrey;
+                                    background-color:azure;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th class="light">Fields</th>
+                                    <th class="light">Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Entity</td>
+                                    <td>Country name.</td>
+                                </tr>
+                                <tr>
+                                    <td>Code</td>
+                                    <td>Three-letter country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Year</td>
+                                    <td>Year expressed in the format <em>yyyy</em> and ranges from 1990 to 2019.</td>
+                                </tr>
+                                <tr>
+                                    <td>Incidence - Dengue - Sex: Both - Age: All Ages (Number): </td>
+                                    <td>Total number of dengue cases in the specified country and year.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <p class="lead mb-1">This dataset is pivotal for the analysis as the number of dengue cases, after accounting for population sizes (i.e., average incidence, which the team used for more accurate representation), provides a good indication of the severity of dengue outbreak.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-dark" id="population">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>API_SP.POP.TOTL_DS2_en_csv_v2_4898931.csv</h2>
+                        <p class="lead mb-3">Describes the population sizes for each country in each of the years between 1960 - 2021. The dataset uses the de facto definition of the total population, which counts all residents regardless of legal status or citizenship and the values shown are mid-year estimates. The dataset was obtained from <a href="https://data.worldbank.org/indicator/SP.POP.TOTL">link</a> and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th {
+                                    border: solid 2px lightgrey;
+                                    background-color:darkslategray;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th>Fields</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Country Name</td>
+                                    <td>Name of the country./td>
+                                </tr>
+                                <tr>
+                                    <td>Country Code</td>
+                                    <td>Three-letter country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Indicator Name</td>
+                                    <td>name of the indicator used; the value for all rows is “Population, total”.</td>
+                                </tr>
+                                <tr>
+                                    <td>Indicator Code</td>
+                                    <td>code of the indicator used; the value for all rows is “SP.POP.TOTL”.</td>
+                                </tr>
+                                <tr>
+                                    <td>Years 1960 - 2021</td>
+                                    <td>contains the population size of the country during the respective year.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <p class="lead mb-1">This dataset would be used to obtain the average incidence of dengue for each country in each year, which the team deems would be a more accurate representation of the severity of dengue outbreaks (refer to Section 6.1.1. for more details).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-light" id="gdp">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>API_NY.GDP.PCAP.CD_DS2_en_csv_v2_4898793.csv</h2>
+                        <p class="lead mb-3">describes the GDP per capita (current US$) for each country in each of the years between 1960 - 2021. The dataset defines GDP per capita as the gross domestic product divided by the mid-year population. The GDP per capita values are in current US dollars. The dataset was obtained from <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD">link</a> and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th.light {
+                                    border: solid 2px lightgrey;
+                                    background-color:azure;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th class="light">Fields</th>
+                                    <th class="light">Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Country Name</td>
+                                    <td>Name of the country.</td>
+                                </tr>
+                                <tr>
+                                    <td>Country Code</td>
+                                    <td>Three-letter country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Indicator Name</td>
+                                    <td>Name of the indicator used; the value for all rows is “GDP per capita (current US$)”. </td>
+                                </tr>
+                                <tr>
+                                    <td>Indicator Code</td>
+                                    <td>Code of the indicator used; the value for all rows is “NY.GDP.PCAP.CD”.</td>
+                                </tr>
+                                <tr>
+                                    <td>Years 1960 - 2021</td>
+                                    <td>Contains the GDP per capita (current US$) in the country during the respective year.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <p class="lead mb-1">This dataset would be useful for the analysis of the correlation between GDP per capita (i.e., often used as an indicator of economic status) and the severity of dengue outbreak in the country or continent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-dark" id="loc">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Countries_codes_and_coordinates.csv</h2>
+                        <p class="lead mb-3">provides the average latitude and longitude for each country. The dataset was obtained from <a href="https://gist.github.com/tadast/8827699">link</a> and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th {
+                                    border: solid 2px lightgrey;
+                                    background-color:darkslategray;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th>Fields</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Country</td>
+                                    <td>Name of the country.</td>
+                                </tr>
+                                <tr>
+                                    <td>Alpha-2 code</td>
+                                    <td>Two-letter country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Alpha-3 code</td>
+                                    <td>Three-letter country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Numeric code</td>
+                                    <td>Numeric country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Latitude (average)</td>
+                                    <td>Average latitude of the country.</td>
+                                </tr>
+                                <tr>
+                                    <td>Longitude (average)</td>
+                                    <td>Average longitude of the country.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <p class="lead mb-1">This dataset will be used for the team’s visualisations that include maps, which are useful for illustrating the locations of each country or continent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- About-->
+        <section class="content-section bg-light" id="precip">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>API_AG.LND.PRCP.MM_DS2_en_csv_v2_5186842.csv</h2>
+                        <p class="lead mb-3">Describes the average precipitation in depth (mm per year) for each country in each of the years between 1960 - 2021. The dataset was obtained from <a href="https://data.worldbank.org/indicator/AG.LND.PRCP.MM">link</a> and contains the following variables and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th.light {
+                                    border: solid 2px lightgrey;
+                                    background-color:azure;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th class="light">Fields</th>
+                                    <th class="light">Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Country Name</td>
+                                    <td>Name of the country.</td>
+                                </tr>
+                                <tr>
+                                    <td>Country Code</td>
+                                    <td>Three-letter country code.</td>
+                                </tr>
+                                <tr>
+                                    <td>Indicator Name</td>
+                                    <td>Name of the indicator used; the value for all rows is “Average precipitation in depth (mm per year)”.</td>
+                                </tr>
+                                <tr>
+                                    <td>Indicator Code</td>
+                                    <td>Code of the indicator used; the value for all rows is “AG.LND.PRCP.MM”.</td>
+                                </tr>
+                                <tr>
+                                    <td>Years 1960 - 2021</td>
+                                    <td>Contains the average precipitation in depth (mm per year) in the country during the respective year.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <p class="lead mb-1">This dataset would be useful for the analysis of the correlation between precipitation levels and the severity of dengue outbreak in the country or continent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About-->
+        <section class="content-section bg-dark" id="temp">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>GlobalLandTemperaturesByCountry.csv</h2>
+                        <p class="lead mb-3">Provides the average temperature (in degrees Celsius) each month (for years 1743 - 2013) for each country. The dataset was obtained from <a href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data">link</a> and contains the following variables:</p>
+                        <div>
+                            <style>
+                                td {
+                                    border: solid 2px lightgrey;
+                                    text-align: center;
+                                }
+                                th {
+                                    border: solid 2px lightgrey;
+                                    background-color:darkslategray;
+                                    text-align: center;
+                                }
+                            </style>
+                            <table class="lead center" style="border: 2px solid black; border-collapse: collapse; float: inherit;">
+                                <tr>
+                                    <th>Fields</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>dt</td>
+                                    <td>first day of each month, in the yyyy-mm-dd format.</td>
+                                </tr>
+                                <tr>
+                                    <td>AverageTemperature</td>
+                                    <td>Average land temperature during the specified month and year for the country.</td>
+                                </tr>
+                                <tr>
+                                    <td>AverageTemperatureUncertainty</td>
+                                    <td>95% confidence interval around the corresponding AverageTemperature values.</td>
+                                </tr>
+                                <tr>
+                                    <td>Country</td>
+                                    <td>Country name.</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <p class="lead mb-1">This dataset would be useful for the analysis of the correlation between temperature and the severity of dengue outbreak in the country or continent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio-->
+        <section class="content-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Our Solution</h3>
+                    <h2 class="mb-5">Data Preprocessing and Data Visualizations</h2>
+                </div>
+                <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="globaldata.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Global Data</div>
+                                    <p class="mb-0">Data used for global dengue cases analysis.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/global-data.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="globalanalysis.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Global Analysis</div>
+                                    <p class="mb-0">Analysis along with data visualizations for global dengue cases.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/undarken-globe-bg.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="localdata.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Local Data</div>
+                                    <p class="mb-0">Data used for global dengue cases analysis.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/local-data-bg.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="localanalysis.html">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Local Analysis</div>
+                                    <p class="mb-0">Analysis along with data visualizations for local dengue cases.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/local-analysis-bg.png" alt="..." />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <p class="text-muted small mb-0">Copyright &copy; IS428 G1 - Group 2 Website 2023</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
